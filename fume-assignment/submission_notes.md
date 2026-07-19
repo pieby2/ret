@@ -22,7 +22,11 @@
 ## 2. Short Note
 
 **What I built:**
-I built a full Client Intelligence Dashboard mockup (HTML/CSS/JS) and a robust data extraction architecture. The UI visually categorizes insights into Confirmed Facts, Client-Reported Data, AI Inferences, and Missing Data. It pulls hardcoded JSON data structured via an LLM extraction schema.
+I built a full Client Intelligence Dashboard mockup (HTML/CSS/JS) and a robust data extraction architecture. The UI visually categorizes insights into Confirmed Facts, Client-Reported Data, AI Inferences, and Missing Data. 
+To showcase senior-level product thinking, I included 3 advanced features:
+1. **Data Traceability (Explainable AI)**: Risk flags reveal the exact quote from the chat log that triggered them.
+2. **Confidence Scores**: AI Inferences display a probability score to reflect LLM certainty.
+3. **Workflow Automation**: An "Auto-Draft Reply" button that writes an empathetic, context-aware message ready for the coach to send.
 
 **Key assumptions:**
 - I assumed the "Accountability Coach" and "Coach" in the transcript are either the same person or working on the same team, and AI should synthesize data for *both*.

@@ -18,9 +18,9 @@ Your objective is to extract 'Client Intelligence' from the provided chat transc
 Rules for Extraction:
 1. Distinguish between 'confirmed' (from devices/logs, if explicit), 'reported' (said by the client), 'inference' (your clinical/coaching deduction), and 'missing' (data that is standard but not mentioned).
 2. For the Weekly Summary, write a cohesive paragraph summarizing the client's physical and mental state.
-3. For 'Risk Flags', identify any severe symptoms, extreme fatigue, or mental health warnings.
+3. For 'Risk Flags', identify any severe symptoms, extreme fatigue, or mental health warnings and provide an EXACT 'evidence' quote from the chat log.
 4. For 'Pending Actions', list anything the client explicitly said they "will do" but haven't yet.
-5. For 'Coach Action', provide exactly one high-value, actionable recommendation for the coach's next message based on the client's current state.
+5. For 'Coach Action', provide a high-value recommendation AND draft a ready-to-send empathetic reply message based on the analysis.
 
 Transcript to analyze:
 [INSERT TRANSCRIPT HERE]
@@ -89,9 +89,10 @@ Transcript to analyze:
       "type": "object",
       "properties": {
         "action": { "type": "string" },
+        "draft_reply": { "type": "string", "description": "An empathetic message the coach can send immediately." },
         "source_type": { "type": "string", "enum": ["inference"] }
       },
-      "required": ["action", "source_type"]
+      "required": ["action", "draft_reply", "source_type"]
     },
     "missing_information": {
       "type": "array",
@@ -104,7 +105,8 @@ Transcript to analyze:
       "type": "object",
       "properties": {
         "value": { "type": ["string", "number"] },
-        "source_type": { "type": "string", "enum": ["confirmed", "reported", "inference", "missing"] }
+        "source_type": { "type": "string", "enum": ["confirmed", "reported", "inference", "missing"] },
+        "confidence_score": { "type": "string", "description": "e.g., '85%' or '100%'" }
       },
       "required": ["value", "source_type"]
     }
