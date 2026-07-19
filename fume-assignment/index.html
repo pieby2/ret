@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUME Client Intelligence</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for modern UI icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ph-fill ph-fire"></i>
+                <span>FUME</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active"><i class="ph ph-squares-four"></i> Dashboard</a>
+                <a href="#" class="nav-item"><i class="ph ph-users"></i> Clients</a>
+                <a href="#" class="nav-item"><i class="ph ph-chat-teardrop"></i> Conversations</a>
+                <a href="#" class="nav-item"><i class="ph ph-gear"></i> Settings</a>
+            </nav>
+            <div class="coach-profile">
+                <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Coach Avatar">
+                <div class="profile-info">
+                    <span class="name">Coach Sarah</span>
+                    <span class="role">Nutrition Expert</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-titles">
+                    <h1>Client Intelligence</h1>
+                    <p>Analysis for <strong>Client #8429 (Anonymized)</strong> - Week 1</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary"><i class="ph ph-export"></i> Export Report</button>
+                    <button class="btn btn-primary"><i class="ph ph-paper-plane-tilt"></i> Send to Client</button>
+                </div>
+            </header>
+
+            <div class="legend-bar">
+                <span>Legend:</span>
+                <span class="badge badge-confirmed"><i class="ph-fill ph-check-circle"></i> Confirmed Fact</span>
+                <span class="badge badge-reported"><i class="ph-fill ph-user"></i> Client-Reported</span>
+                <span class="badge badge-inference"><i class="ph-fill ph-brain"></i> AI Inference</span>
+                <span class="badge badge-missing"><i class="ph-fill ph-warning"></i> Missing Data</span>
+            </div>
+
+            <!-- Dynamic Content Container -->
+            <div id="dashboard-content" class="dashboard-grid">
+                <!-- Content will be injected by app.js -->
+            </div>
+
+            <!-- Human Review Section -->
+            <div class="review-section glass-panel">
+                <div class="review-header">
+                    <h3>Human Review</h3>
+                    <p>Review the AI-generated intelligence before saving to client profile.</p>
+                </div>
+                <div class="review-actions">
+                    <button class="btn btn-danger" id="btn-reject"><i class="ph ph-x"></i> Reject Analysis</button>
+                    <button class="btn btn-secondary" id="btn-edit"><i class="ph ph-pencil-simple"></i> Edit Data</button>
+                    <button class="btn btn-success" id="btn-approve"><i class="ph ph-check"></i> Approve & Save</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit Modal (Hidden by default) -->
+    <div id="edit-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h2>Edit Extracted Data</h2>
+                <button id="close-modal" class="btn-icon"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>In a real app, form fields for editing the JSON would appear here.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="save-modal" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
