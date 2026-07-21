@@ -1,4 +1,4 @@
-const dashboardData = {
+const defaultDashboardData = {
     summary: {
         text: "Client #8429 is a highly engaged but highly stressed working mother. Over the past week, extreme work and school pressure negatively impacted sleep (avg 5-6 hours) and caused extreme fatigue (falling asleep at work). She maintained good hydration (~4L) and steps (~6-8k), but struggled with meal prep time, leading to missed protein and inconsistent meals. Symptoms of severe acidity and bloating persist. By Day 8, a full night of sleep (8 hrs) significantly improved her energy.",
         source: "inference"
@@ -70,6 +70,8 @@ const dashboardData = {
         draft: "Hi there! I read through your updates. It sounds like you had an incredibly exhausting week with school and office politics—falling asleep in a meeting is a huge sign that your body needs a break! I want to validate that you still managed your water and steps despite all this stress, which is amazing. \n\nLet's not worry about eating 'less' right now. Can we focus purely on 5-minute prep hacks for this week? (Like ordering sprouts or keeping boiled chana handy). Also, would you be open to trying a simple 3-minute deep breathing exercise before your meetings?"
     }
 };
+
+const dashboardData = window.INJECTED_DASHBOARD_DATA || defaultDashboardData;
 
 function renderDashboard() {
     const container = document.getElementById('dashboard-content');
